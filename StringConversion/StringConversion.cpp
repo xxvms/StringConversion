@@ -20,9 +20,9 @@ public:
 	}
 	String(char s[])					// 1 argument string constructor
 	{
-		strcpy(str, s);					// converts C-string to String
+		strcpy_s(str, s);					// converts C-string to String
 	}
-	void display() const				// display String
+	void display() const				// display String constatnt as reading does not require any changes to the data.
 	{
 		std::cout << str << std::endl;
 	}
@@ -33,7 +33,7 @@ public:
 
 };
 
-
+   
 int main()
 {
 	String s1;							// will use no argument constructor
@@ -45,7 +45,8 @@ int main()
 
 	String s2 = "Bonne Annee!";			// uses 1 argument constructor to initialize String
 	std::cout << static_cast<char*>(s2); // use conversion operator to convert String to C-string before sending to << operator 
-
+	
+	std::cout << std::endl;
 
 	system("pause");
     return 0;
